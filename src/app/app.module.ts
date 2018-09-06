@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(
+    RouterModule.forRoot([
       {
         path: '',
         loadChildren: './pages/pages.module#PagesModule'
