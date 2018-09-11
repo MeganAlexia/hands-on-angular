@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 
 import { RouterModule } from '@angular/router';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
+    CoreModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -22,6 +24,7 @@ import { RouterModule } from '@angular/router';
         path: '**',
         redirectTo: ''
       }
+      ]
     )
   ],
   providers: [],
