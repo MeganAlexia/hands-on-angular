@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/index';
 export class HttpService {
   constructor(private http: HttpClient) {}
 
-  get(url: string, params?: HttpParams): Observable<any> {
+  get(url: string, params?: any): Observable<any> {
     return this.http.get(url, {
       headers: {
         'Content-Type':  'application/json',

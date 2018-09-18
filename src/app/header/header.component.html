@@ -1,8 +1,9 @@
-<div class="header">
+<mat-toolbar>
   <span>HEADER</span>
-  <nav>
-    <a [routerLink]="['/profile']">Profile</a>
-    <a [routerLink]="['/home']">Home</a>
-    <a [routerLink]="['/messages']">Messages</a>
+  <span class="header-remaining-space"></span>
+  <nav >
+    <a class="header-nav" [routerLink]="['/profile']">Profile</a>
+    <a class="header-nav" [routerLink]="['/home']">Home</a>
+    <a class="header-nav" [routerLink]="['/messages']">Messages</a>
   </nav>
-</div>
+</mat-toolbar>

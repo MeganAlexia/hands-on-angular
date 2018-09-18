@@ -9,12 +9,15 @@ import { HomeComponent } from './home/home.component';
 import { MessagesComponent } from './messages/messages.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
+import { HomeService } from './home/home.service';
 import { ProfileService } from './profile/profile.service';
 
+import { MatCardModule } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
+    MatCardModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
@@ -24,6 +27,7 @@ import { ProfileService } from './profile/profile.service';
     NotFoundComponent
   ],
   providers: [
+    HomeService,
     ProfileService
   ]
 })

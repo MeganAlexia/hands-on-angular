@@ -1,0 +1,12 @@
+mat-card {
+  margin-top: 10px;
+}
+
+mat-card-subtitle {
+  display: flex;
+  flex-direction: column;
+
+  span {
+    margin-bottom: 5px;
+  }
+}

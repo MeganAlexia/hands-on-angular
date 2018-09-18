@@ -1,19 +1,19 @@
-<div>
-  <section>
-    <img src="{{user.picture}}"/>
-  </section>
-  <section>
-    <span>{{user.title}} {{user.firstName}} {{user.lastName}}</span>
-    <span>Email : {{user.email}}</span>
-    <span>Phone : {{user.phone}}</span>
-    <span>Location : {{user.location.city}} </span>
-  </section>
-  <section>
+<mat-card>
+  <mat-card-title-group>
+    <img mat-card-avatar src="{{user.picture}}"/>
+    <mat-card-title>{{user.title | titlecase }} {{user.firstName | titlecase }} {{user.lastName | titlecase }}</mat-card-title>
+    <mat-card-subtitle>
+      <span>Email : {{user.email}}</span>
+      <span>Phone : {{user.phone}}</span>
+      <span>Location : {{user.location.city}} </span>
+    </mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-card-content>
     <span>Preferences :</span>
     <select>
       <option *ngFor="let available of profileService.cuisinesAvailable" value="{{available.cuisine.cuisine_id}}">
         {{available.cuisine.cuisine_name}}
       </option>
     </select>
-  </section>
-</div>
+  </mat-card-content>
+</mat-card>

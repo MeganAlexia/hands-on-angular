@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { MatToolbarModule, MatCardModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -14,7 +16,10 @@ import { CoreModule } from './core/core.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     CoreModule,
+    MatCardModule,
+    MatToolbarModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -23,8 +28,7 @@ import { CoreModule } from './core/core.module';
       {
         path: '**',
         redirectTo: ''
-      }
-      ]
+      }]
     )
   ],
   providers: [],
