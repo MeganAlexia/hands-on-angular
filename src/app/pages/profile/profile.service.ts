@@ -1,18 +1,13 @@
 import { Injectable } from '@angular/core';
-import { User } from '../../models/user.model';
-import { USER } from '../../../assets/mocks/profile';
 import { ZOMATO_URL } from '../../job.constant';
 import { HttpService } from '../../core/services/http.service';
+import { Cuisine } from '../../models/cuisine.model';
 
 @Injectable()
 export class ProfileService {
-  cuisinesAvailable = null;
+  cuisinesAvailable: Cuisine[] = null;
 
   constructor(private httpService: HttpService) {}
-
-  getUser(): User {
-    return USER;
-  }
 
   fetchCuisines(city_id: number): void {
     this.httpService.get(ZOMATO_URL + 'cuisines', {'city_id': city_id})

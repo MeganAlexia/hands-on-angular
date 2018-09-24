@@ -12,12 +12,22 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeService } from './home/home.service';
 import { ProfileService } from './profile/profile.service';
 
-import { MatCardModule } from '@angular/material';
+import {
+  MatButtonModule, MatCardModule, MatDividerModule, MatFormFieldModule, MatListModule,
+  MatSelectModule
+} from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     MatCardModule,
+    MatDividerModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatButtonModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [

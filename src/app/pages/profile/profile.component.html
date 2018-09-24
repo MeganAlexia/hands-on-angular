@@ -8,12 +8,31 @@
       <span>Location : {{user.location.city}} </span>
     </mat-card-subtitle>
   </mat-card-title-group>
+
   <mat-card-content>
-    <span>Preferences :</span>
-    <select>
-      <option *ngFor="let available of profileService.cuisinesAvailable" value="{{available.cuisine.cuisine_id}}">
-        {{available.cuisine.cuisine_name}}
-      </option>
-    </select>
+    <span>Select preferences :</span>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-select formControlName="cuisine">
+          <mat-option *ngFor="let available of profileService.cuisinesAvailable"
+                  [value]="available.cuisine"
+          >
+            {{available.cuisine.cuisine_name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-button>Add a preference</button>
+    </form>
+
+    <mat-list>
+      <mat-list-item mat-line *ngFor="let cuisine of user.preferences; last as last">
+        <p>{{cuisine.cuisine_name}}</p>
+        <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+      </mat-list-item>
+    </mat-list>
+
+
   </mat-card-content>
+
 </mat-card>
+
