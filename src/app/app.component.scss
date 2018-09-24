@@ -1,4 +1,12 @@
 .app-body {
   height: 100%;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.body {
+  height: 100%;
+  width: 60%;
+  justify-content: flex-start;
+  flex-direction: column;
 }
