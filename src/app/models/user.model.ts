@@ -1,3 +1,5 @@
+import { Cuisine } from './cuisine.model';
+
 export class User {
   firstName: string;
   lastName: string;
@@ -9,5 +11,5 @@ export class User {
   phone: string;
   email: string;
   picture: string;
-  preferences: number[];
+  preferences: Cuisine[];
 }
