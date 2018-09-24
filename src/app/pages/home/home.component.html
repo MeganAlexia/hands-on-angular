@@ -1,3 +1,6 @@
-<p>
-  home works!
-</p>
+<div>
+  home !
+  <ul *ngFor="let res of homeService.restaurants">
+    <li>{{res.restaurant.name}}</li>
+  </ul>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../../core/services/http.service';
-import { ZOMATO_URL } from '../../job.constant';
+import { HomeService } from './home.service';
+import { UserService } from '../../core/services/user.service';
+import { Cuisine } from '../../models/cuisine.model';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +9,21 @@ import { ZOMATO_URL } from '../../job.constant';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  private locationId: number;
+  private preferences: Cuisine[];
 
-  constructor(private httpService: HttpService) {}
+  constructor(private homeService: HomeService,
+              private userService: UserService) {}
 
   ngOnInit() {
-    this.httpService.get(ZOMATO_URL + 'categories');
+    this.getUserInfos();
+    this.homeService.fetchRestaurants(this.locationId, this.preferences);
+  }
+
+  private getUserInfos(): void {
+    const user = this.userService.user;
+    this.locationId = user.location.city_id;
+    this.preferences = user.preferences;
   }
 
 }
