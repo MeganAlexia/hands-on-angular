@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 import { HttpService } from './services/http.service';
+import { UserService } from './services/user.service';
 
 @NgModule({
   imports: [
@@ -10,7 +11,8 @@ import { HttpService } from './services/http.service';
     HttpClientModule
   ],
   providers: [
-    HttpService
+    HttpService,
+    UserService
   ]
 })
 export class CoreModule { }
