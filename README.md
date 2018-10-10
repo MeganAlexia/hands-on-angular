@@ -1,4 +1,8 @@
 # HandsOnAngular
+In WIP
+
+This project has for goal to choose favorite food from the profile page. When going on the homepage, the restaurant from your location and corresponding to your preferences will be displayed. The Zomato API is used for this project.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
 
